@@ -1,5 +1,21 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
-
-{{outlet}}
+<h1> LEGEND </h1>
+<div style={{TEAM1}}>{{team1Name}}</div>
+<div style={{TEAM2}}>{{team2Name}}</div>
+<div style={{TEAM3}}>{{team3Name}}</div>
+<div style={{TEAM4}}>{{team4Name}}</div>
+<div style={{BYSTANDER}}>bystander</div>
+<div style={{SPY}}>spy</div>
+<h1> CONFIG </h1>
+<table>
+    <tr><td>width</td><td>{{input value=length}}</td></tr>
+    <tr><td>height</td><td>{{input value=width}}</td></tr>
+    <tr><td></td><td><button class="btn btn-danger" {{action 'recalculate'}}>recalculate</button></td></tr>
+</table>
+<h1> BOARD </h1>
+{{#each fields as |row|}}
+    <div style="display:block;" >
+    {{#each row as |card|}}
+        <div style={{card}}></div>
+    {{/each}}
+    </div>
+{{/each}}
